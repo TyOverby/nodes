@@ -30,6 +30,9 @@ export class Canvas extends Component<CanvasProps, CanvasState> {
             });
         });
     }
+    componentWillUnmount() {
+        this.dragboxUnsubscribe();
+    }
 
     render() {
         const viewbox = `${this.state.x} ${this.state.y} 1000 1000`;

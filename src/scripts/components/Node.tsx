@@ -23,6 +23,7 @@ function foo({ x, y }: { x: number, y: string }): { a: number, b: string } {
 
 export class Node extends Component<NodeProps, NodeState> {
     dragboxUnsubscribe: () => void = () => { };
+    resizeUnsubscribe: () => void = () => { };
 
     constructor(props: NodeProps) {
         super(props);
@@ -37,7 +38,7 @@ export class Node extends Component<NodeProps, NodeState> {
     componentDidMount() {
         const element = ReactDOM.findDOMNode(this) as Element;
         const resize = element.querySelector(".resize")!;
-        dragBox(resize, (dx, dy) => {
+        this.resizeUnsubscribe = dragBox(resize, (dx, dy) => {
             this.setState({
                 width: this.state.width + dx,
                 height: this.state.height + dy,
@@ -53,6 +54,7 @@ export class Node extends Component<NodeProps, NodeState> {
     }
     componentWillUnmount() {
         this.dragboxUnsubscribe();
+        this.resizeUnsubscribe();
     }
 
     render() {

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "jsx": "react",
+    },
+    "files": [
+        "src/main.ts",
+    ]
+}

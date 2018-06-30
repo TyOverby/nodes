@@ -1,0 +1,30 @@
+{
+  "name": "nodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "serve": "http-server ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "ts-node": "^7.0.0",
+    "webpack-command": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "awesome-typescript-loader": "^5.2.0",
+    "http-server": "^0.11.1",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.9.2",
+    "webpack": "^4.14.0"
+  }
+}
